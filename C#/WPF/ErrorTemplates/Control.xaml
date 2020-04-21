@@ -1,0 +1,23 @@
+<UserControl x:Class="Namespace.Control"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/NAMESPACE;component/PATH/TO/ErrorTemplate.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl>
+
+    <Panel>
+        <Panel.Resources>
+            <Style TargetType="TextBox">
+                <Setter Property="Validation.ErrorTemplate" Value="{StaticResource ErrorTemplateKey}" />
+            </Style>
+        </Panel.Resources>
+    </Panel>
+
+    <TextBox Text="{Binding}" />
+
+</UserControl>
